@@ -1,0 +1,155 @@
+
+ Emme   Module:  2.41       Date: 24-07-18 02:52       User: BSY /CONNECT .none           Page:*****
+ Database Title:                                                                                 
+ Scenario 99235: [BC]2035 ALT
+ ---------------------------------------------------------------------------------------------------
+
+
+ NETWORK CALCULATIONS
+ ********************
+
+ result               =   @vots
+
+ Selected links:  !@lmark=0                              
+                 & ci=0                                  
+                 & cj=0                                  
+                 &!@totv=0                               
+
+ Extra network attributes:
+ L: @vots                Value of Travel Time Saving               24-07-18 02:52
+
+
+
+ Result summary:
+
+ Allocated memory buffer space:    263644 (max.  13000000)
+ Number of expression evaluations:  13451 (link)   
+ Minimum result value:           0.000004  at link 329601 562368
+ Maximum result value:         501.589050  at link 328035 348887
+ Sum of result values:       41646.390625
+ Average result value:           3.096156
+
+
+ Emme   Module:  2.41       Date: 24-07-18 02:52       User: BSY /CONNECT .none           Page:*****
+ Database Title:                                                                                 
+ Scenario 99235: [BC]2035 ALT
+ ---------------------------------------------------------------------------------------------------
+
+
+ NETWORK CALCULATIONS
+ ********************
+
+ result               =   @vocs
+
+ Selected links:  !@lmark=0                              
+                 & ci=0                                  
+                 & cj=0                                  
+                 &!@totv=0                               
+
+ Extra network attributes:
+ L: @vocs                Vehicle Operate Cost                      24-07-18 02:52
+
+
+
+ Result summary:
+
+ Allocated memory buffer space:    263644 (max.  13000000)
+ Number of expression evaluations:  13451 (link)   
+ Minimum result value:           0.000002  at link 329601 562368
+ Maximum result value:         560.105530  at link 328035 348887
+ Sum of result values:       34516.218750
+ Average result value:           2.566071
+
+
+ Emme   Module:  2.41       Date: 24-07-18 02:52       User: BSY /CONNECT .none           Page:*****
+ Database Title:                                                                                 
+ Scenario 99235: [BC]2035 ALT
+ ---------------------------------------------------------------------------------------------------
+
+
+ NETWORK CALCULATIONS
+ ********************
+
+ result               =   @vics
+
+ Selected links:  !@lmark=0                              
+                 & ci=0                                  
+                 & cj=0                                  
+                 &!@totv=0                               
+
+ Extra network attributes:
+ L: @vics                Valuation of Incident Cost Saving         24-07-18 02:52
+
+
+
+ Result summary:
+
+ Allocated memory buffer space:    263644 (max.  13000000)
+ Number of expression evaluations:  13451 (link)   
+ Minimum result value:           0.000000  at link  87007 211515
+ Maximum result value:          42.039650  at link 328035 348887
+ Sum of result values:        5318.775879
+ Average result value:           0.395419
+
+
+ Emme   Module:  2.41       Date: 24-07-18 02:52       User: BSY /CONNECT .none           Page:*****
+ Database Title:                                                                                 
+ Scenario 99235: [BC]2035 ALT
+ ---------------------------------------------------------------------------------------------------
+
+
+ NETWORK CALCULATIONS
+ ********************
+
+ result               =   @vopcs
+
+ Selected links:  !@lmark=0                              
+                 & ci=0                                  
+                 & cj=0                                  
+                 &!@totv=0                               
+
+ Extra network attributes:
+ L: @vopcs               Valuation of Pollution Cost Saving        24-07-18 02:52
+
+
+
+ Result summary:
+
+ Allocated memory buffer space:    263644 (max.  13000000)
+ Number of expression evaluations:  13451 (link)   
+ Minimum result value:           0.000000  at link 329601 562368
+ Maximum result value:          50.381096  at link 328035 348887
+ Sum of result values:        3413.853760
+ Average result value:           0.253799
+
+
+ Emme   Module:  2.41       Date: 24-07-18 02:52       User: BSY /CONNECT .none           Page:*****
+ Database Title:                                                                                 
+ Scenario 99235: [BC]2035 ALT
+ ---------------------------------------------------------------------------------------------------
+
+
+ NETWORK CALCULATIONS
+ ********************
+
+ result               =   @voncs
+
+ Selected links:  !@lmark=0                              
+                 & ci=0                                  
+                 & cj=0                                  
+                 &!@ptot=0                               
+
+ Extra network attributes:
+ L: @voncs               Valuation of Noise Cost Saving            24-07-18 02:52
+
+
+
+ Result summary:
+
+ Allocated memory buffer space:    263644 (max.  13000000)
+ Number of expression evaluations:  13451 (link)   
+ Minimum result value:          -1.418991  at link 210698 210695
+ Maximum result value:           4.695348  at link 210407 209751
+ Sum of result values:         199.436401
+ Average result value:           0.014827
+

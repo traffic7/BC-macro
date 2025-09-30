@@ -1,0 +1,470 @@
+~# o|256
+~?!i&32768  /if switch 15 (dialog echo mode) is off
+~o=39       /dialog  echo mode off
+~x=%0%
+~r99=0
+~?x=0
+~+|~/ ERROR : No. of parameters is not correct : %x% parameters specified !!!|~$>stop
+~/2019 year
+~/**** DO NOT *********
+s=%1%
+~# ~<delextra @pvol1
+~# ~<delextra @pvol2
+~# ~<delextra @pvol3
+~# ~<delextra @pvol4
+~# ~<delextra @pturn
+~# ~<delextra @nturn
+~# ~<delextra @tturn
+
+~+|m=2.42|~y=1
+~#Delete attribute if already exists
+~+|3|@rcl|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@rcl|Road Class|0
+~#Delete attribute if already exists
+~+|3|@vocs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@vocs|Vehicle Operate Cost|0
+~#Delete attribute if already exists
+~+|3|@pvocs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@pvocs|Peak Vehicle Operate Cost|0
+~#Delete attribute if already exists
+~+|3|@nvocs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@nvocs|Non-Peak Vehicle Operate Cost|0
+~#Delete attribute if already exists
+~+|3|@nvots|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@nvots|Value of Travel Time Saving|0
+~#Delete attribute if already exists
+~+|3|@vots|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@vots|Value of Travel Time Saving|0
+~#Delete attribute if already exists
+~+|3|@vics|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@vics|Valuation of Incident Cost Saving|0
+~#Delete attribute if already exists
+~+|3|@vopcs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@vopcs|Valuation of Pollution Cost Saving|0
+~#Delete attribute if already exists
+~+|3|@pvopcs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@pvopcs|Peak Valuation of Pollution Cost Saving|0
+~#Delete attribute if already exists
+~+|3|@nvopcs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@nvopcs|Peak Valuation of Pollution Cost Saving|0
+~#Delete attribute if already exists
+~+|3|@voncs|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@voncs|Valuation of Noise Cost Saving|0
+~#Delete attribute if already exists
+~+|3|@leq1|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@leq1|Equivalent Sound of Level1|0
+~#Delete attribute if already exists
+~+|3|@leq2|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@leq2|Equivalent Sound of Level2|0
+~#Delete attribute if already exists
+~+|3|@c1|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@c1|Noise Constant|0
+~#Delete attribute if already exists         
+~+|3|@nspd|~?e| |~?q=1|y                      
+~#Create attribute                           
+~+|2|2                                       
+~?e                                          
+~+|~/Cannot create extra attribute|q|~$>stop 
+~+|@nspd|Speed|0                              
+~#Delete attribute if already exists
+~+|3|@pwl|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop         
+~+|@pwl|Sound Power level|0 
+~#Delete attribute if already exists               
+~+|3|@cvol|~?e| |~?q=1|y                           
+~#Create attribute                                 
+~+|2|2                                             
+~?e                                                
+~+|~/Cannot create extra attribute|q|~$>stop       
+~+|@cvol|Centroid Connector Volume|0 
+~#Delete attribute if already exists               
+~+|3|@tvots|~?e| |~?q=1|y                          
+~#Create attribute                                 
+~+|2|2                                             
+~?e                                                
+~+|~/Cannot create extra attribute|q|~$>stop       
+~+|@tvots|Transit Time Cost Saving|0
+~#Delete attribute if already exists               
+~+|3|@ptot|~?e| |~?q=1|y                          
+~#Create attribute                                 
+~+|2|2                                             
+~?e                                                
+~+|~/Cannot create extra attribute|q|~$>stop       
+~+|@ptot|Peak Traffic volume(10%)|0                              
+q
+~/****Caculation Vehicle Type of Traffic Volume*********
+~r1=0.786701
+~r2=0.003427
+~r3=0.154045
+~r4=0.029522
+~r5=0.026303
+
+~/****Centroid connector volume cal*********  
+~<calnet (@ptota*5+@ntota*14)/.9856 @totv
+~+;2.41;1;y;@cvol;y;;(@totv);;cj=1;;4;6
+
+~/****Centroid connector volume Zero*********
+~+|2.41|1|y|@totv|y||0||ci=1|cj=1||4|q
+~+|2.41|1|y|@ptota|y||0||ci=1|cj=1||4|q
+~+|2.41|1|y|@ntota|y||0||ci=1|cj=1||4|q
+
+~/****cal spd*****************************     
+~<calnet (@ntime1+@ntime2+@ntime3+@ntime4+@ntime5)/5 @ntimea
+~+;2.41;1;y;@pspd;y;;(@ptimea .gt. 0.0000000001)*(len/@ptimea*60);;*;4;6
+~+;2.41;1;y;@nspd;y;;(@ntimea .gt. 0.0000000001)*(len/@ntimea*60);;*;4;6
+
+
+~/****Road class******************************s
+~/** @rcl : 1-highway                       **
+~/**      : 2-national                      **
+~/**      : 3-local                         **
+~/********************************************
+~+;2.41;1;y;@rcl;y;;1;;vdf=1,7;vdf=41,99;type=401,999;;4;q                    //고속도로 vdf
+~+;2.41;1;y;@rcl;y;;2;;vdf=9,24;;4;q                                     //국도 vdf
+~+;2.41;1;y;@rcl;y;;3;;vdf=25,32;;4;q                                     //지방도 vdf
+
+~/**** VOCS calculate  ***********************
+~/** @vocs  : 전일운행비용(2024년 기준으로 수정_250806) **
+~/****************************************
+~/**** VOCS calculate  ***********************
+~//// Peak
+2.41
+1
+y
+@pvocs
+y
+
+((0.00000492*(@pspd)^4-0.00174193*(@pspd)^3
++0.25106799*(@pspd)^2-17.78182586*(@pspd)+765.13001217)*len
+*@ptota*%r1%
++(0.00001393*(@pspd)^4-0.00441911*(@pspd)^3
++0.57815961*(@pspd)^2-36.56152235*(@pspd)+1384.340464)*len
+*@ptota*%r2%
++(0.00000966*(@pspd)^4-0.00269479*(@pspd)^3
++0.31552798*(@pspd)^2-18.527203*(@pspd)+694.610224)*len
+*@ptota*%r3%
++(0.00002769*(@pspd)^4-0.00694719*(@pspd)^3
++0.70669201*(@pspd)^2-35.29357075*(@pspd)+1135.2051535)*len
+*@ptota*%r4%
++(0.0000239*(@pspd)^4-0.00657652*(@pspd)^3
++0.75632506*(@pspd)^2-42.85518051*(@pspd)+1576.454715)*len
+*@ptota*%r5%)*365/100000000
+
+*
+4
+q
+
+~//// Non-Peak
+2.41
+1
+y
+@nvocs
+y
+
+((0.00000492*(@nspd)^4-0.00174193*(@nspd)^3
++0.25106799*(@nspd)^2-17.78182586*(@nspd)+765.13001217)*len
+*@ntota*%r1%
++(0.00001393*(@nspd)^4-0.00441911*(@nspd)^3
++0.57815961*(@nspd)^2-36.56152235*(@nspd)+1384.340464)*len
+*@ntota*%r2%
++(0.00000966*(@nspd)^4-0.00269479*(@nspd)^3
++0.31552798*(@nspd)^2-18.527203*(@nspd)+694.610224)*len
+*@ntota*%r3%
++(0.00002769*(@nspd)^4-0.00694719*(@nspd)^3
++0.70669201*(@nspd)^2-35.29357075*(@nspd)+1135.2051535)*len
+*@ntota*%r4%
++(0.0000239*(@nspd)^4-0.00657652*(@nspd)^3
++0.75632506*(@nspd)^2-42.85518051*(@nspd)+1576.454715)*len
+*@ntota*%r5%)*365/100000000
+
+*
+4
+q
+
+~<calnet (@pvocs*5+@nvocs*14) @vocs
+
+
+~/**** VOTS calculate(KDI 2024년 시간가치로 변경_250806) ***************************
+~/** @vots  : 시간비용 (승용차시간가치 : 23,319)        **
+~/**        : 시간비용 (버스시간가치  : 191,626)        **
+~/**        : 시간비용 (화물시간가치  : 27,809)        **
+~/***********************************************
+2.41
+1
+y
+@vots
+y
+
+((@ptimea/60*@ptota*(%r1%*23319+%r2%*191626
++(%r3%+%r4%+%r5%)*27809)*365/100000000)*5
++(@ntimea/60*@ntota*(%r1%*23319+%r2%*191626
++(%r3%+%r4%+%r5%)*27809)*365/100000000)*14)
+
+*
+4
+q
+
+~/**** VICS calculate(2024년 시간가치로 변경_250806) ****************************
+~/** @vics  : 교통사고비용                           **
+~/** 사망+부상                                     **
+~/************************************************
+
+2.41
+1
+y
+@vics
+y
+
+(19.7765788704*(@rcl.eq.1)*@totv*len
++58.9577610072*(@rcl.eq.2)*@totv*len
++153.7349595012*(@rcl.eq.3)*@totv*len)*365/100000000
+
+*
+4
+q
+
+~/**** VOPCS calculate(2024년 시간가치로 변경_250806) ****************************
+~/** @vopcS  : 대기오염 온실가스비용             **
+~/************************************************
+
+~//Peak
+2.41                                                                      
+1                                                                         
+y                                                                         
+@pvopcs                                                                    
+y                                                                         
+
+((0.00000206*@pspd^4-0.00055413*@pspd^3+0.05480821*@pspd^2
+-2.47832703*@pspd+59.0643625)*len*@ptota*%r1%
++(0.00000877*@pspd^4-0.00236642*@pspd^3+0.23503116*@pspd^2
+-10.73131066*@pspd+277.9321985)*len*@ptota*%r2%
++(0.00000389*@pspd^4-0.001051*@pspd^3+0.10453041*@pspd^2
+-4.79186756*@pspd+120.7520105)*len*@ptota*%r3%
++(0.00000979*@pspd^4-0.00265115*@pspd^3+0.2655548*@pspd^2
+-12.38980732*@pspd+342.385857)*len*@ptota*%r4%
++(0.0000398*@pspd^4-0.01076854*@pspd^3+1.07626866*@pspd^2
+-49.94470387*@pspd+1345.542792)*len*@ptota*%r5%)*365/100000000
+
+*                                                                         
+4                                                                         
+q  
+
+~//Non-Peak
+
+2.41                                                                      
+1                                                                         
+y                                                                         
+@nvopcs                                                                    
+y                                                                         
+
+((0.00000206*@nspd^4-0.00055413*@nspd^3+0.05480821*@nspd^2
+-2.47832703*@nspd+59.0643625)*len*@ntota*%r1%
++(0.00000877*@nspd^4-0.00236642*@nspd^3+0.23503116*@nspd^2
+-10.73131066*@nspd+277.9321985)*len*@ntota*%r2%
++(0.00000389*@nspd^4-0.001051*@nspd^3+0.10453041*@nspd^2
+-4.79186756*@nspd+120.7520105)*len*@ntota*%r3%
++(0.00000979*@nspd^4-0.00265115*@nspd^3+0.2655548*@nspd^2
+-12.38980732*@nspd+342.385857)*len*@ntota*%r4%
++(0.0000398*@nspd^4-0.01076854*@nspd^3+1.07626866*@nspd^2
+-49.94470387*@nspd+1345.542792)*len*@ntota*%r5%)*365/100000000
+
+*                                                                         
+4                                                                         
+q 
+
+~<calnet (@pvopcs*5+@nvopcs*14) @vopcs                     
+
+~/**** voncs calculate(2024년 시간가치로 변경_250806) *****************************
+~/** @voncs  : 소음비용                              **
+~/** @leq   : 등가소음도 (1:고속도로, 2:일반도로)           **
+~/** @c1    : 소음예측 상수                            **
+~/** @tot   : 교통량 적용(첨두 10%)                    **
+~/** @pwl   :                                     **
+~/** average cost   : 2,859won                    **
+~/*************************************************
+~+;2.41;1;y;@ptot;y;;@totv*.1;;*;4;6  
+~/** 고속도로 소음예측식                                      
+2.41                                                                      
+1                                                                         
+y                                                                         
+@pwl                                                                      
+y                                                                         
+
+72.4+(20*log10(@pspd)                                                      
++10*log10((%r1%+%r3%)+3.8*(1-%r1%-%r3%)))                                 
+
+!@pspd=0                                                                   
+
+4                                                                         
+q                                                                         
+
+2.41                                                                      
+1                                                                         
+y                                                                         
+@leq1                                                                     
+y                                                                         
+
+((@rcl.eq.1).and.(@ptot.gt.0))*@pwl                                       
++10*log10(1/(111.6*(1000*@pspd/@ptot)))                                    
+
+!@ptot=0                                                                  
+
+4                                                                         
+q                                                                         
+
+~/*************************************************                       
+~/**  일반도로(국도+지방도) 소음예측식-start(첨두시 교통량 적용)   **     
+~/**  소음예측식 상수C구하기                             **               
+~/*************************************************                       
+
+2.41                                                                      
+1                                                                         
+y                                                                         
+@c1                                                                       
+y                                                                         
+
+0*(@ptot.le.2000)                                                         
+-1*((@ptot.gt.2000).and.(@ptot.le.5000))                                  
+-2.5*((@ptot.gt.5000).and.(@ptot.le.10000))                               
+-4*((@ptot.gt.10000).and.(@ptot.le.15000))                                
+-5.5*(@ptot.gt.15000)                                                     
+
+*                                                                         
+4                                                                         
+q                                                                         
+
+2.41                                                                      
+1                                                                         
+y                                                                         
+@leq2                                                                     
+y                                                                         
+
+(@rcl.gt.1)*(1.1*(20+10*log10(@ptot*@pspd/16.1)-9*log10(2.2)+@c1))         
+
+!@ptot=0                                                                  
+
+4                                                                         
+q                                                                         
+
+~+;2.41;1;y;@voncs;y;;len*(@leq1+@leq2)*2859*365/100000000;;!@ptot=0;;4;q;
+
+
+~# ~/**** park calculate *****************************
+~# ~/** @park  : 주차비용                              **
+~# ~/** 2025년 평균 비용 : 1,641.049 원/대                 **
+~# ~/** 2030년 평균 비용 : 1,617.151 원/대                 **
+~# ~/** 2035년 평균 비용 : 1,597.688 원/대                 **
+~# ~/** 2040년 평균 비용 : 1,589.595 원/대                 **
+~# ~/** 2045년 평균 비용 : 1,591.352 원/대                 **
+~# ~/**       평균 비용 : 1,607.602 원/대                 **
+~# ~/*************************************************
+~# 
+~# ~+;2.41;1;y;@park;y;;@cvol*1607.602*365/100000000;;*;4;6;
+~# 
+~# ~/**** transit calculate (@tvots) ***************
+~# ~/** @tvots  : 시간비용 (시간가치 : 6,346)     **
+~# ~/** @timtr  : 통행시간                        **
+~# ~/** @tvol   : transit volume                  **
+~# ~/***********************************************
+~# 
+~# ~+;2.41;1;y;@timtr;y;;timtr;;*;*;4;q
+~# ~+;2.41;1;y;@tvol;y;;voltr;;*;ci=0;&cj=0;;4;q
+~# 
+~# 2.41
+~# 1
+~# y
+~# @tvots
+~# y
+~# 
+~# (@timtr/60)*@tvol*365*6109/100000000
+~# 
+~# 4
+~# *
+~# *
+~# 4
+~# q
+~# 
+reports=Benefit%1%
+~!if exist Benefit%1% del Benefit%1%  
+
+~+;2.41;1;n;@vots;;!@lmark=0;&ci=0;&cj=0;&!@totv=0;;2;2;6                   //통행시간 절감편익출력하기
+~+;2.41;1;n;@vocs;;!@lmark=0;&ci=0;&cj=0;&!@totv=0;;2;2;6                   //차량운행비용 절감편익출력하기
+~+;2.41;1;n;@vics;;!@lmark=0;&ci=0;&cj=0;&!@totv=0;;2;2;6                   //교통사고 감소편익출력하기
+~+;2.41;1;n;@vopcs;;!@lmark=0;&ci=0;&cj=0;&!@totv=0;;2;2;6                  //대기,온실가스 저감편익출력하기
+~+;2.41;1;n;@voncs;;!@lmark=0;&ci=0;&cj=0;&!@ptot=0;;2;2;6                  //소음비용 절감편익출력하기
+~# ~+;2.41;1;n;@park;;!@lmark=0;&!@cvol=0;;2;2;6                                //주차비용 절감편익출력하기
+
+~# ~+;2.41;1;n;@vots;;ci=0;&cj=0;&!@totv=0;;2;2;6                   //통행시간 절감편익출력하기
+~# ~+;2.41;1;n;@vocs;;ci=0;&cj=0;&!@totv=0;;2;2;6                   //차량운행비용 절감편익출력하기
+~# ~+;2.41;1;n;@vics;;ci=0;&cj=0;&!@totv=0;;2;2;6                   //교통사고 감소편익출력하기
+~# ~+;2.41;1;n;@vopcs;;ci=0;&cj=0;&!@totv=0;;2;2;6                  //대기,온실가스 저감편익출력하기
+~# ~+;2.41;1;n;@voncs;;ci=0;&cj=0;&!@ptot=0;;2;2;6                  //소음비용 절감편익출력하기
+
+~# ~+;2.41;1;n;@vots;;ci=0;&cj=0;&!@totv=0;&@sdf=1;;2;2;6                   //통행시간 절감편익출력하기
+~# ~+;2.41;1;n;@vocs;;ci=0;&cj=0;&!@totv=0;&@sdf=1;;2;2;6                   //차량운행비용 절감편익출력하기
+~# ~+;2.41;1;n;@vics;;ci=0;&cj=0;&!@totv=0;&@sdf=1;;2;2;6                   //교통사고 감소편익출력하기
+~# ~+;2.41;1;n;@vopcs;;ci=0;&cj=0;&!@totv=0;&@sdf=1;;2;2;6                  //대기,온실가스 저감편익출력하기
+~# ~+;2.41;1;n;@voncs;;ci=0;&cj=0;&!@ptot=0;&@sdf=1;;2;2;6                  //소음비용 절감편익출력하기
+
+
+
+reports=^

@@ -1,0 +1,39 @@
+~t1=%1%
+~t3=%3%
+~x=%2%
+~# ~y=%3%
+~y=%t1.-3%
+~r180=100
+~r182=0.000001
+~r183=5
+~r184=14
+~r185=0.9856
+
+
+~/ =================================================================================================
+~/ ================= Customize parameters for your application For Multiclass Assignment ===========
+~/ =================================================================================================
+~/ Scenario                  :   %t1%
+~/ Taget Year                :   %y%
+~/ No. of Iterations         :   %r180%
+~/ Relative Gap              :   %r182%
+~/ Peak Time Duration        :   %r183%
+~/ Non-Peak Time Duration    :   %r184%
+~/ Correction Factor         :   %r185%
+~/ =================================================================================================
+~/ =================================================================================================
+~# ~<hassign29.mac %t1% %r180% %r182% %t3% mf%x%1 mf%x%2 mf%x%3 mf%x%4
+~# ~<02.Macro\Aspeed.mac
+~<hassign%y%.mac %t1% %r180% %r182% %t3% mf%x%1 mf%x%2 mf%x%3 mf%x%4
+~<calnet @vol1+@vol2/2+@vol3/1.3+@vol4/3.75+volad/2 @ptot
+~<calnet len/timau*60 @pspd
+
+~<BC-mac\(peak)loopassignment.mac %t1% 100 105
+
+
+~<hassign%y%.mac %t1% %r180% %r182% %t3% mf%x%5 mf%x%6 mf%x%7 mf%x%8
+~<calnet @vol1+@vol2/2+@vol3/1.3+@vol4/3.75+volad/2 @ntot
+
+~<BC-mac\(npeak)loopassignment.mac %t1% 100 105
+
+~<calnet (@ptota*%r183%+@ntota*%r184%)/%r185% @totv
