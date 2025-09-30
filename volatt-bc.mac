@@ -1,0 +1,94 @@
+~o|256                                                                           
+~?!i&32768  /if switch 15 (dialog echo mode) is off                              
+~o=39       /dialog echo mode off                                                
+
+~+|m=2.42|~y=1                                    
+~#Delete attribute if already exists
+~+|3|@ptot|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@ptot|Peak Total Link Voume(veh/hour)|0
+~#Delete attribute if already exists
+~+|3|@ntot|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@ntot|NPeak Total Link Voume(veh/hour)|0
+~#Delete attribute if already exists
+~+|3|@totv|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@totv|Total Link Voume(veh/day)|0 
+~#Delete attribute if already exists        
+~+|3|@pspd|~?e| |~?q=1|y                    
+~#Create attribute                          
+~+|2|2                                      
+~?e                                         
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@pspd|Peak Time Speed(km/h)|0 
+~#Delete attribute if already exists
+~+|3|@time|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@time|travel time(min)|0
+~#Delete attribute if already exists
+~+|3|@totv|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@totv|Total Link Voume(veh/day)|0 
+~#Delete attribute if already exists
+~+|3|@lmark|~?e| |~?q=1|y
+~#Create attribute
+~+|2|2
+~?e
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@lmark|area|0 
+~#Delete attribute if already exists        
+~+|3|@spd|~?e| |~?q=1|y                    
+~#Create attribute                          
+~+|2|2                                      
+~?e                                         
+~+|~/Cannot create extra attribute|q|~$>stop
+~+|@spd|Travel Speed(km/h)|0 
+~# ~#Delete attribute if already exists
+~# ~+|3|@tturn|~?e| |~?q=1|y
+~# ~#Create attribute
+~# ~+|2|5
+~# ~?e
+~# ~+|~/Cannot create extra attribute|q|~$>stop
+~# ~+|@tturn|Total Turn Voume(veh/day)|0             
+~# ~#Delete attribute if already exists
+~# ~+|3|@pturn|~?e| |~?q=1|y
+~# ~#Create attribute
+~# ~+|2|5
+~# ~?e
+~# ~+|~/Cannot create extra attribute|q|~$>stop
+~# ~+|@pturn|Peak Total Turn Voume(veh/hour)|0       
+~# ~#Delete attribute if already exists
+~# ~+|3|@nturn|~?e| |~?q=1|y
+~# ~#Create attribute
+~# ~+|2|5
+~# ~?e
+~# ~+|~/Cannot create extra attribute|q|~$>stop
+~# ~+|@nturn|None-Peak Total Turn Voume(veh/hour)|0
+~# ~#Delete attribute if already exists
+~# ~+|3|@tturn|~?e| |~?q=1|y
+~# ~#Create attribute
+~# ~+|2|5
+~# ~?e
+~# ~+|~/Cannot create extra attribute|q|~$>stop
+~# ~+|@tturn|Total Turn Voume(veh/day)|0              
+q                                                            
+
+~o=6
+~?m=000
+~+|~?q=0|                     

@@ -1,0 +1,97 @@
+~#     ~/ =================== 미시행 ==============================
+~#     ~t1=7
+~#     ~t3=Fare30.mac
+~#     ~#   ~# ~<copyscen y %t1%0029 %t1%1029 2029 DN-for B/C
+~#     ~#   ~# s=%t1%1029
+~#     ~#   ~# ~<del-projectline.mac
+~#     ~#   ~# ~<copyscen y %t1%1029 %t1%1030 2030 DN-for B/C
+~#     ~#   ~# ~<copyscen y %t1%1029 %t1%1035 2035 DN-for B/C
+~#     ~#   ~# ~<copyscen y %t1%1029 %t1%1040 2040 DN-for B/C
+~#     ~#   ~# ~<copyscen y %t1%1029 %t1%1045 2045 DN-for B/C
+~#     ~#   ~# 
+~#     ~#   ~# 
+~#     ~<interscen %t1%1029 %t1%1045 Pre.mac   
+~#     ~<interscen %t1%1029 %t1%1045 BC-mac\volatt-bc.mac
+~#     
+~#     ~<BC-mac\ResultBC.mac %t1%1029 51 %t3%
+~#     ~<BC-mac\ResultBC.mac %t1%1030 52 %t3%
+~#     ~<BC-mac\ResultBC.mac %t1%1035 53 %t3%
+~#     ~<BC-mac\ResultBC.mac %t1%1040 54 %t3%
+~#     ~<BC-mac\ResultBC.mac %t1%1045 55 %t3%
+~#     
+~#   ~/ =================== 시행_1.0배 ==============================
+~#   
+~#   ~t1=7
+~#   ~t3=FARE30-1-0.mac
+~#   ~# ~<copyscen 72029 74029 2029 DO-for B/C-1.0
+~#   ~# ~<copyscen 72029 74030 2030 DO-for B/C-1.0
+~#   ~# ~<copyscen 72029 74035 2035 DO-for B/C-1.0
+~#   ~# ~<copyscen 72029 74040 2040 DO-for B/C-1.0
+~#   ~# ~<copyscen 72029 74045 2045 DO-for B/C-1.0
+~#   
+~#   ~<interscen %t1%4029 %t1%4045 Pre.mac   
+~#   ~<interscen %t1%4029 %t1%4045 BC-mac\volatt-bc.mac
+~#   
+~#   ~<BC-mac\ResultBC.mac %t1%4029 51 %t3%
+~#   ~<BC-mac\ResultBC.mac %t1%4030 52 %t3%
+~#   ~<BC-mac\ResultBC.mac %t1%4035 53 %t3%
+~#   ~<BC-mac\ResultBC.mac %t1%4040 54 %t3%
+~#   ~<BC-mac\ResultBC.mac %t1%4045 55 %t3%
+~#   
+~#   
+~#   ~# ~/ ===================  편익 범위 산정 ============================== 
+~#   ~<copyscen y 74029 777 Reflect Area(Temporay Scenario)
+~#   ~<reg.mac 777 20.0 900001 900083 900012 900073 900015 900028 900041 900076 900060 900080
+~#   ~<interscen 74029 74045 BC-mac\242c.mac
+~#    
+~#    
+~#   ~/ ===================  편익산정 ============================== 
+~#   ~t1=7
+~#   ~# ~<BC-mac\Benefit.mac %t1%1029
+~#   ~# ~<BC-mac\Benefit.mac %t1%1030
+~#   ~# ~<BC-mac\Benefit.mac %t1%1035
+~#   ~# ~<BC-mac\Benefit.mac %t1%1040
+~#   ~# ~<BC-mac\Benefit.mac %t1%1045
+~#   
+~#   
+~#   ~<BC-mac\Benefit.mac %t1%4029
+~#   ~<BC-mac\Benefit.mac %t1%4030
+~#   ~<BC-mac\Benefit.mac %t1%4035
+~#   ~<BC-mac\Benefit.mac %t1%4040
+~#   ~<BC-mac\Benefit.mac %t1%4045
+
+
+
+~/ =================== 미시행_강변북로 일반화 전 ==============================
+
+~t1=7 
+~t3=FARE30-1-0.mac
+~# ~<copyscen 73029 75029 2029 DO-for B/C
+~# ~<copyscen 73029 75030 2030 DO-for B/C
+~# ~<copyscen 73029 75035 2035 DO-for B/C
+~# ~<copyscen 73029 75040 2040 DO-for B/C
+~# ~<copyscen 73029 75045 2045 DO-for B/C
+
+~<interscen %t1%5029 %t1%5045 Pre.mac   
+~<interscen %t1%5029 %t1%5045 BC-mac\volatt-bc.mac
+
+~<BC-mac\ResultBC.mac %t1%5029 51 %t3%
+~<BC-mac\ResultBC.mac %t1%5030 52 %t3%
+~<BC-mac\ResultBC.mac %t1%5035 53 %t3%
+~<BC-mac\ResultBC.mac %t1%5040 54 %t3%
+~<BC-mac\ResultBC.mac %t1%5045 55 %t3%
+     
+     
+~/ ===================  편익 범위 산정 ============================== 
+~<copyscen y 75029 777 Reflect Area(Temporay Scenario)
+~<reg.mac 777 20.0 900001 900083 900012 900073 900015 900028 900041 900076 900060 900080
+~<interscen 75029 75045 BC-mac\242c.mac
+ 
+ 
+~/ ===================  편익산정 ============================== 
+~t1=7
+~<BC-mac\Benefit.mac %t1%5029
+~<BC-mac\Benefit.mac %t1%5030
+~<BC-mac\Benefit.mac %t1%5035
+~<BC-mac\Benefit.mac %t1%5040
+~<BC-mac\Benefit.mac %t1%5045

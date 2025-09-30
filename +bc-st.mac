@@ -1,0 +1,148 @@
+
+~# ~/ =================== 대안시행 ==============================
+~# 
+~# ~t1=9
+~# ~t3=Fare30.mac
+~# 
+~# ~<interscen %t1%0245 %t1%0250 Pre.mac   
+~# ~<interscen %t1%0245 %t1%0250 BC-mac\volatt-bc.mac
+~# 
+~# ~# ~<BC-mac\ResultBC.mac %t1%0231 754 %t3%
+~# ~# ~<BC-mac\ResultBC.mac %t1%0235 755 %t3%
+~# ~# ~<BC-mac\ResultBC.mac %t1%0240 756 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%0245 757 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%0250 758 %t3%
+
+
+
+~# ~# =================== 시행 ==============================
+~# 
+~# ~t1=9
+~# ~t3=Fare30.mac
+~# 
+~# ~<interscen %t1%0131 %t1%0150 Pre.mac   
+~# ~<interscen %t1%0131 %t1%0150 BC-mac\volatt-bc.mac
+~# 
+~# ~<BC-mac\ResultBC.mac %t1%0131 754 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%0135 755 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%0140 756 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%0145 757 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%0150 758 %t3%
+
+
+
+~# ~t1=9
+~# ~t3=Fare30.mac
+~# 
+~# ~<interscen %t1%9131 %t1%9231 Pre.mac   
+~# ~<interscen %t1%9131 %t1%9231 BC-mac\volatt-bc.mac
+~# 
+~# ~<BC-mac\ResultBC.mac %t1%9131 754 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9231 754 %t3%
+~# 
+~# ~<copyscen y 99231 777 Reflect Area(Temporay Scenario)
+~# ~<Reg.mac 777 20 800001 810164
+~# 
+~# ~<interscen 99131 99231 BC-mac\242c.mac
+~# ~<interscen 99131 99231 BC-mac\242c.mac
+~#  
+~#  
+~# ~/ ===================  편익산정 ============================== 
+~# ~t1=9
+~# ~<BC-mac\Benefit.mac %t1%9131
+~# ~<BC-mac\Benefit.mac %t1%9231
+
+
+
+~# ~t1=9
+~# ~t3=Fare30.mac
+~# 
+~# ~<interscen %t1%9131 %t1%9250 Pre.mac
+~# ~<interscen %t1%9131 %t1%9250 BC-mac\volatt-bc.mac
+~# 
+~# ~<BC-mac\ResultBC.mac %t1%9131 564 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9135 565 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9140 566 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9145 567 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9150 568 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9231 564 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9235 565 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9240 566 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9245 567 %t3%
+~# ~<BC-mac\ResultBC.mac %t1%9250 568 %t3%
+
+~<copyscen y 99235 777 Reflect Area(Temporay Scenario)
+~<Reg.mac 777 15 800001 810164
+
+~<interscen 99131 99150 BC-mac\242c.mac
+~<interscen 99231 99250 BC-mac\242c.mac
+ 
+ 
+~/ ===================  편익산정 ============================== 
+~t1=9
+~<BC-mac\Benefit.mac %t1%9131
+~<BC-mac\Benefit.mac %t1%9135
+~<BC-mac\Benefit.mac %t1%9140
+~<BC-mac\Benefit.mac %t1%9145
+~<BC-mac\Benefit.mac %t1%9150
+~<BC-mac\Benefit.mac %t1%9231
+~<BC-mac\Benefit.mac %t1%9235
+~<BC-mac\Benefit.mac %t1%9240
+~<BC-mac\Benefit.mac %t1%9245
+~<BC-mac\Benefit.mac %t1%9250
+
+
+
+
+
+~# ~<interscen 777 1313 BC-mac\ddd.mac
+~# ~<interscen 60030 60045 BC-mac\ddd.mac
+
+
+~# ~# ~/ ===================  편익 범위 산정 ============================== 
+~# ~<copyscen y 90235 777 Reflect Area(Temporay Scenario)
+~# ~<Reg.mac 777 20 800001 810164
+~# 
+~# ~<interscen 90131 90250 BC-mac\242c.mac
+~# ~<interscen 90131 90250 BC-mac\242c.mac
+~#  
+~#  
+~# ~/ ===================  편익산정 ============================== 
+~# ~t1=9
+~# ~<BC-mac\Benefit.mac %t1%0231
+~# ~<BC-mac\Benefit.mac %t1%0235
+~# ~<BC-mac\Benefit.mac %t1%0240
+~# ~<BC-mac\Benefit.mac %t1%0245
+~# ~<BC-mac\Benefit.mac %t1%0250
+~# 
+~# ~t1=9
+~# ~<BC-mac\Benefit.mac %t1%0131
+~# ~<BC-mac\Benefit.mac %t1%0135
+~# ~<BC-mac\Benefit.mac %t1%0140
+~# ~<BC-mac\Benefit.mac %t1%0145
+~# ~<BC-mac\Benefit.mac %t1%0150
+
+
+
+~# ~# ~/ ===================  편익 범위 산정 ============================== 
+~# ~<copyscen y 70335 777 Reflect Area(Temporay Scenario)
+~# ~<Reg.mac 777 35 326995 327087
+~# 
+~# ~<interscen 70131 70150 BC-mac\242c.mac
+~# ~<interscen 70331 70350 BC-mac\242c.mac
+~#  
+~#  
+~# ~/ ===================  편익산정 ============================== 
+~# ~t1=7
+~# ~<BC-mac\Benefit.mac %t1%0331
+~# ~<BC-mac\Benefit.mac %t1%0335
+~# ~<BC-mac\Benefit.mac %t1%0340
+~# ~<BC-mac\Benefit.mac %t1%0345
+~# ~<BC-mac\Benefit.mac %t1%0350
+~# 
+~# ~t1=7
+~# ~<BC-mac\Benefit.mac %t1%0131
+~# ~<BC-mac\Benefit.mac %t1%0135
+~# ~<BC-mac\Benefit.mac %t1%0140
+~# ~<BC-mac\Benefit.mac %t1%0145
+~# ~<BC-mac\Benefit.mac %t1%0150
